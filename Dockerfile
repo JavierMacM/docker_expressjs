@@ -1,4 +1,4 @@
-FROM node:10
+FROM node
 
 WORKDIR /app/
 
@@ -8,6 +8,12 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["node","express_app/bin/www"]
+
+#borrar todos los contenedores
+#docker rm -vf $(docker ps -a -q)
+
+#borrar todas las imagenes
+#docker rmi -f $(docker images -a -q)
